@@ -10,18 +10,18 @@ function halCheck(usersNumber) {
     } else {
       var halOutput = range;
     }
-
+    // clearDave();
     halOutputArray.push(halOutput);
   }
   halNumbers(halOutputArray);
 }
 
 function clearHal(){
-  document.getElementById("halOutput").innerHTML = "";
+  document.getElementById("halBox").innerHTML = "";
 }
 
 function clearDave(){
-  document.getElementById("halOutput").innerHTML = "";
+  document.getElementById("daveSays").innerHTML = "";
 }
 
 function playAgain(){
@@ -35,6 +35,7 @@ function playAgain(){
       document.getElementById("daveSays").innerHTML += txt.charAt(typeIndex);
       typeIndex++;
       setTimeout(typeWriter, speed);
+      setTimeout(playAgain, 9000);
       }
     }
 }
@@ -47,6 +48,7 @@ function halNumbers() {
     halIndex++;
     setTimeout(halNumbers, speed);
   }
+
 }
 
 
@@ -56,7 +58,7 @@ $("#numberButton").click(function(event) {
   event.preventDefault();
   var usersNumber = parseInt($("#userNumber").val());
   halCheck(usersNumber);
-  console.log(usersNumber);
+  // clearDave();
 })
 
 var typeIndex = 0; //Not sure why this needs to be outside of the function.
