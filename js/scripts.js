@@ -16,6 +16,28 @@ function halCheck(usersNumber) {
   halNumbers(halOutputArray);
 }
 
+function clearHal(){
+  document.getElementById("halOutput").innerHTML = "";
+}
+
+function clearDave(){
+  document.getElementById("halOutput").innerHTML = "";
+}
+
+function playAgain(){
+  clearDave();
+  var typeIndex = 0; //Not sure why this needs to be outside of the function.
+  function typeReWriter() {
+    var txt = "HAL, you sound a little weird. I'm going to run another diagnotic on you.";
+    var speed = 50;
+
+    if (typeIndex < txt.length) {
+      document.getElementById("daveSays").innerHTML += txt.charAt(typeIndex);
+      typeIndex++;
+      setTimeout(typeWriter, speed);
+      }
+    }
+}
 
 var halIndex = 0; //Not sure why this needs to be outside of the function.
 function halNumbers() {
